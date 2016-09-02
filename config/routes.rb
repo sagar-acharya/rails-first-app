@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   #get 'pages/about'
   get 'about', to:'pages#about' #override default route
   get 'contact', to:'pages#contact' #override default route
-
+  get 'blog', to: redirect("http://blog.sagaracharya.com")
+  get "error", to: "pages#error"
   resources :projects
   root 'pages#home'
+  get "*path", to: redirect("/error")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
