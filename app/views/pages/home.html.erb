@@ -1,6 +1,7 @@
 <h1>Home Page</h1>
-
-<% @projects.each do |project| %>
-  <p><strong><%= project.title %></strong></p>
-<% end %>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage-projects">
+  <% @projects.each do |project| %>
+    <p><strong><%= project.title %></strong><em><%= " | #{project.percent_complete}" unless !project.percent_complete %></em></p>
+  <% end %>
+  <p>Find me in app/views/pages/home.html.erb</p>
+</div>
